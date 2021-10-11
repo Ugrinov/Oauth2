@@ -1,0 +1,109 @@
+body{
+    background: #0d1521;
+    font-family: tahoma;
+    color: #989898;
+}
+
+#todo-table{
+    position: relative;
+    width: 95%;
+    background: #090d13;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#todo-table form:after{
+    margin: 0;
+    content: '';
+    display: block;
+    clear: both;
+}
+
+input[type="text"]{
+    position: relative;
+    width: 70%;
+    padding: 20px;
+    background:#181c22;
+    border: 0;
+    float: left;
+    font-size: 20px;
+    color: #989898;
+    box-sizing: border-box;
+}
+input[type="text"]:focus{
+
+}
+
+
+button{
+    padding: 20px;
+    width: 30%;
+    float: left;
+    background: #23282e;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: -1000000000;
+}
+
+button:hover{
+    opacity:0.8;
+}
+
+ul.message{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.message > li{
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: arial;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+li:hover{
+    text-decoration: line-through;
+    background: rgba(0,0,0,0.2);
+}
+
+body{
+    font-family: arial;
+    margin: 0;
+}
+nav{
+    background: #4267b2;
+    padding: 20px 10px;
+}
+nav ul{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+nav li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+nav a{
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+main, header {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    color: #333;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "oauth2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "valeriy",
+  "license": "ISC",
+  "dependencies": {
+    "aes256": "^1.1.0",
+    "bcrypt": "^5.0.1",
+    "cookie-session": "^1.4.0",
+    "crypto-js": "^4.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "ncrypt-js": "^2.0.0",
+    "passport": "^0.5.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "request-promise": "^4.2.6"
+  }
+}

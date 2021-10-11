@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>OAuth Tutorials</title>
+    <script src = "http://code.jquery.com/jquery-1.12.3.min.js"> </script>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <% if (user) { %>
+                    <li><a href="/auth/logout">Log out</a></li>
+                <% } else {%>
+                    <li><a href="/auth/login">Login</a></li>
+                <% }%>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Welcome to your profile, <%= user.username %>%></h1>
+        </header>
+        <main>
+            <div id="todo-table">
+
+                <form>
+                    <input type="text" name="item" required placeholder="Введите сообщение">
+                    <button type="submit">
+                        Написать
+                    </button>
+                </form>
+
+
+
+                <ul class="message">
+                    <% for(let i=0; i<abra.length; i++){ %>
+                        <li id="<%= abra[i].id %>" > <%= abra[i].message %> </li>
+                    <% } %>
+                </ul>
+
+
+        <!--action=<%=`https://graph.facebook.com/v12.0/869556967098544/feed?&access_token=${ user.token }`%> method="POST"-->
+            </div>
+        </main>
+    </body>
+
+<script>
+    $(document).ready(function(){
+        $('form').on('submit', function(){
+            var item = $('form input');
+            var message = {message: item.val()};
+            $.ajax({
+                type: 'POST',
+                url: `https://graph.facebook.com/v12.0/111775861274752/feed?&access_token=` + "<%= pageToken %>",
+                data: message,
+                success: function(data){
+                    location.reload();
+                }
+            });
+            return false;
+        });
+    });
+
+
+    $('li').on('click', function(e){
+        var item = $('form input');
+        var id = e.target.id;
+        $.ajax({
+            type: 'DELETE',
+            url: `https://graph.facebook.com/v12.0/` + id + `?&access_token=` + "<%= pageToken %>",
+            success: function(data){
+                //do something with the data via front-end framework
+                location.reload();
+            }
+        });
+    });
+</script>
+
+
+</html>
